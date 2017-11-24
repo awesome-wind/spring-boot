@@ -1,2 +1,2 @@
 # spring-boot
-a newbie's learning of spring-boot
+a newbie's way of learning spring-boot
