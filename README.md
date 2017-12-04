@@ -20,3 +20,6 @@ spring boot整合了mybatis的配置文件xml的单数据源版本
 
 ### springboot_Jpa_multiResources
 Jpa的多资源版本
+
+### springboot_mybatis_redis
+整合mybatis与redis，将键值型数据库redis作为mybatis的二级缓存
