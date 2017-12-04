@@ -1,7 +1,7 @@
 # spring-boot
 a newbie's way of learning spring-boot
 
-笔者学习过程中的小demo，均测试过，非常适合初学者学习,以下demo均由marven管理
+笔者学习过程中的小demo，均测试过，非常适合初学者学习,以下demo均由maven管理
 
 ### mybatisXML
 spring boot整合了mybatis的配置文件xml的单数据源版本
