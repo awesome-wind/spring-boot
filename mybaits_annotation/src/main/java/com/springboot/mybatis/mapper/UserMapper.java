@@ -8,7 +8,6 @@ import java.util.List;
 @Mapper
 public interface UserMapper{
 //    mybatis中数据库不能自动识别大写字母，如userName，它只认识user_name，因此需要转换
-
     @Select("SELECT * FROM user")
     @Results({
             @Result(column = "user_name",property = "userName")
@@ -32,5 +31,4 @@ public interface UserMapper{
 
     @Delete("DELETE FROM user WHERE id=#{id}")
     void delOne(int id);
-
 }
