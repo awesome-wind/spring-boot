@@ -45,7 +45,7 @@ public class PrimaryConfig {
                 .build();
     }
 
-    @Autowired
+    @Autowired(required=false)
     private JpaProperties jpaProperties;
 
     private Map<String, String> getVendorProperties(DataSource dataSource) {
