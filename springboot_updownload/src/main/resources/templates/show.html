@@ -1,65 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>图片展示与下载</title>
 
-    <script type="text/javascript" src="/jquery-3.2.1.js"/>
-    <script type="text/javascript">
-        function showFile(name) {
-            alert(456);
-            alert(name);
-            var path = "/images/"+name;
-            alert(path);
-            var html = "<img alt='暂无图片' src="+path+" width='180px' onclick='downFile(this)'/>";
-            var realName = getRealName(name);
-            html+=realName;
-            $('#picture').append(html);
-        }
-        
-        function downFile(obj) {
-            window.location.href=obj.src;
-        }
-        
-        function getRealName() {
-            var arr = key.split("-");
-            var name = arr[5];
-            for(var i=6;i<arr.length;i++)
-                name = name +"-"+arr[i];
-            return name;
-        }
-    </script>
+    <script type="text/javascript" src="/jquery-3.2.1.js"></script>
+
 </head>
 <body>
-
     <!--获取到文件名与文件路径-->
-    <ul th:each="lm : ${fileNameMap}">
-        <li th:each="entry:${lm}">
-
-            <script th:inline="javascript">
-                var fileName = [[${entry.key}]];
-//                alert(fileName);
-//                showFile(fileName);
-                $(function () {
-//                    alert(123);
-                    alert(fileName);
-                    showFile(fileName);
-                })
-            </script>
-        </li>
+    <div th:each="lm : ${fileNameMap}">
+        <!--<li th:each="entry:${lm}">-->
         <!--<li th:each="entry:${lm}" th:text="${entry.value}"></li>-->
+        <img alt='暂无图片' th:src="${lm.key}" th:text="${lm.value}" width='180px' onclick="downFile(this)" />
+        <input th:type="button" th:value="删除" />
 
+        <script th:inline="javascript">
+//            var fileName = [[${lm}]];
+//            alert(fileName);
 
+            function downFile(obj) {
+                console.log(obj);//放在里面不管用
+                window.location.href=obj.src;
+            }
 
-    </ul>
-
-
-    <!--<img alt='暂无图片' src="/images/f7c31288-4bf5-4945-938e-0c41866fb4ca-阿狸.png"/>-->
-
-    <div id="picture">
+        </script>
 
     </div>
+
 </body>
 </html>
